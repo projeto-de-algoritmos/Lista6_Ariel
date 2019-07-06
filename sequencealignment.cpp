@@ -122,6 +122,7 @@ void getMinimumPenalty(string x, string y, int pxy, int pgap,int pai, int filho)
 
 // Driver code
 int main(){
+    cout<<1<<endl;
     // input strings
     string gene1[64];// = "AGGGCT";
     string gene2[64];// = "AGGCA";
@@ -136,7 +137,7 @@ int main(){
     // calling the function to calculate the result
     for (int i = 0; i < 64; ++i){//PARA TODO PAI
         for (int j = 0; j < 64; ++j){
-            getMinimumPenalty(gene1[i], gene2[j],misMatchPenalty, gapPenalty,i,j);
+            getMinimumPenalty(gene1[i], gene2[j],misMatchPenalty, gapPenalty,(i+1),(j+1));
         }
 
     }

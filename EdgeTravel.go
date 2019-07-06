@@ -127,14 +127,30 @@ func main() {
 	total = 0
 
 	_, err := fmt.Scanf("%d", &base)
+	if err != nil {
+		fmt.Println("base")
+		fmt.Println(err)
+		return
+	}
 	//path[0] = base - 1
 	//path[192] = base - 1
 	for i := 0; i < (2 * (192 * 191)); i++ {
 		_, err = fmt.Scanf("%d", &origin)
+		if err != nil {
+			fmt.Println("origin")
+			fmt.Println(err)
+			return
+		}
 		_, err = fmt.Scanf("%d", &destiny)
+		if err != nil {
+			fmt.Println("destiny")
+			fmt.Println(err)
+			return
+		}
 		_, err = fmt.Scanf("%d", &dist)
 		if err != nil {
-			fmt.Println("here man")
+			fmt.Println("dist")
+			fmt.Println(err)
 			return
 		}
 		graph[(origin - 1)][(destiny - 1)] = dist
