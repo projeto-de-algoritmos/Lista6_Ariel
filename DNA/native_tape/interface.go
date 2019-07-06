@@ -1,6 +1,6 @@
-package main
+//package main
 
-//package n_tape
+package n_tape
 
 type string_reader interface {
 	readlines(path string) error

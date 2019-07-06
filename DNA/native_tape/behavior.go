@@ -1,6 +1,6 @@
-package main
+//package main
 
-//package n_tape
+package n_tape
 
 import (
     "bufio"
@@ -8,7 +8,9 @@ import (
     "os"
 )
 
-type tape []string
+type tape struct {
+    memory []string
+}
 
 /**
  * @brief      Reads lines.
@@ -31,15 +33,15 @@ func (t *tape) readlines(path string) error {
     if scanner.Err() != nil {
         return scanner.Err()
     } else {
-        t = lines
+        t.memory = lines
         return scanner.Err()
     }
 }
 
 func main() {
     var t tape
-    tape.readlines("Fathers.txt")
+    t.readlines("Fathers.txt")
     for i := 0; i < 10; i++ {
-        fmt.Println(t[i])
+        fmt.Println(t.memory[i])
     }
 }

@@ -1,7 +1,7 @@
-package main
+// package main
 
-import "strings"
+// //package n_tape
 
-//package n_tape
-
-type tape []string
+// type tape struct {
+// 	memory []string
+// }
