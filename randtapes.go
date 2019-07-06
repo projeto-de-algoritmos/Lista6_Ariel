@@ -13,8 +13,8 @@ func randtape() {
 	//var A, B int64
 	//A = int64(i*7) % 89
 	//B = int64(i+13) % 13
-	alpha = int64(rand.Intn(10) + rand.Intn(100))
-	beta = ((alpha * 3) + 7) / 13
+	alpha = int64(rand.Intn(31) + rand.Intn(89))
+	beta = ((alpha * 5) + 13) / 11
 	gama = beta % 20
 	gama = int64(math.Abs(float64(gama)))
 	//fmt.Println(gama)

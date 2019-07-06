@@ -5,7 +5,7 @@
 using namespace std;
 
 // function to find out the minimum penalty
-void getMinimumPenalty(string x, string y, int pxy, int pgap)
+void getMinimumPenalty(string x, string y, int pxy, int pgap,int pai, int filho)
 {
     int i, j; // intialising variables
 
@@ -105,7 +105,8 @@ void getMinimumPenalty(string x, string y, int pxy, int pgap)
 
     // Printing the final answer
     //cout << "Minimum Penalty in aligning the genes = ";
-    cout << dp[m][n]; //<< "\n";
+    //
+    cout << pai <<" "<< filho <<" "<< dp[m][n]<<endl;
     //cout << "The aligned genes are :\n";
     // for (i = id; i <= l; i++)
     // {
@@ -122,16 +123,22 @@ void getMinimumPenalty(string x, string y, int pxy, int pgap)
 // Driver code
 int main(){
     // input strings
-    string gene1;// = "AGGGCT";
-    string gene2;// = "AGGCA";
-    cin>> gene1;
-    cin>> gene2;
+    string gene1[64];// = "AGGGCT";
+    string gene2[64];// = "AGGCA";
+    for (int i = 0; i < 64; ++i){
+        cin>> gene1[i];
+        cin>> gene2[i];
+    }
     // intialsing penalties of different types
     int misMatchPenalty = 3;
     int gapPenalty = 2;
 
     // calling the function to calculate the result
-    getMinimumPenalty(gene1, gene2,
-        misMatchPenalty, gapPenalty);
+    for (int i = 0; i < 64; ++i){//PARA TODO PAI
+        for (int j = 0; j < 64; ++j){
+            getMinimumPenalty(gene1[i], gene2[j],misMatchPenalty, gapPenalty,i,j);
+        }
+
+    }
     return 0;
 }
