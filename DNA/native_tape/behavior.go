@@ -4,12 +4,12 @@ package n_tape
 
 import (
     "bufio"
-    "fmt"
+    //"fmt"
     "os"
 )
 
-type tape struct {
-    memory []string
+type Tape struct {
+    Memory []string
 }
 
 /**
@@ -19,7 +19,7 @@ type tape struct {
  *
  * @return     { description_of_the_return_value }
  */
-func (t *tape) readlines(path string) error {
+func (t *Tape) Readlines(path string) error {
     file, err := os.Open(path)
     if err != nil {
         return err
@@ -33,15 +33,15 @@ func (t *tape) readlines(path string) error {
     if scanner.Err() != nil {
         return scanner.Err()
     } else {
-        t.memory = lines
+        t.Memory = lines
         return scanner.Err()
     }
 }
 
-func main() {
-    var t tape
-    t.readlines("Fathers.txt")
-    for i := 0; i < 10; i++ {
-        fmt.Println(t.memory[i])
-    }
-}
+// func main() {
+//     var t Tape
+//     t.Readlines("Fathers.txt")
+//     for i := 0; i < 10; i++ {
+//         fmt.Println(t.memory[i])
+//     }
+// }
